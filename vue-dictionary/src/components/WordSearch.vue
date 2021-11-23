@@ -10,9 +10,15 @@
       </ul>
       <h2>{{ word }}</h2>
       <p v-for="meaning in meanings" :key="meaning.id">
-        {{ meaning.partOfSpeech }}: {{ meaning.definitions[0].definition }} <br> Example: {{ meaning.definitions[0].example }} <br>
-        Synonyms: <span v-for="synonym in meaning.definitions[0].synonyms" :key="synonym.id">
-          {{ synonym }},
+        <span> {{ meaning.partOfSpeech }}: </span>
+        <span> {{ meaning.definitions[0].definition }} </span>
+        <br> 
+        <span> Example: {{ meaning.definitions[0].example }} </span>
+        <br>
+        <span> Synonyms: 
+          <span @click="Hyperlink()" v-for="synonym in meaning.definitions[0].synonyms" :key="synonym.id">
+            {{ synonym }},
+          </span>
         </span>
       </p>
 
@@ -26,11 +32,12 @@ export default {
       return{
         searchedWord:'',
         words:[],
-        meanings: []
+        meanings: [],
+        synonym: []
       };
     },
     props: ["word"],
-  
+
     methods: {
       fetchData: async function(){
         try{
@@ -42,11 +49,15 @@ export default {
           console.log(data[0].meanings);
           this.word = data[0].word;
           this.meanings = data[0].meanings;
+
         } catch (error){
           alert(error);
         }
+      },
+      Hyperlink(){
+        this.$router.push('/synonym'); 
       }
-    },  
+  }
 };
 </script>
 
