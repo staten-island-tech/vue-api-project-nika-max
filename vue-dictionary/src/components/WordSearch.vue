@@ -1,13 +1,12 @@
 <template>
   <div>
       <h1>Nika's Dictionary</h1>
-      <ul class="word-search">
+      <div class="word-search">
         <form @submit.prevent="fetchData">
             <input type="text" placeholder="Search a word..." v-model="searchedWord">
             <input type="submit"> 
         </form>
-        <li class="word-list-item" v-for="word in words" :key="word.name">{{ word.name }}</li>
-      </ul>
+      </div>
       <h2>{{ word }}</h2>
       <p v-for="meaning in meanings" :key="meaning.id">
         <span> {{ meaning.partOfSpeech }}: </span>
