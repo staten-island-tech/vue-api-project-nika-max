@@ -5,13 +5,17 @@
       <router-link to="/about">About</router-link>
     </div> -->
     <div class="dropdown">
-      <button @click="dropdownClick()" class="dropbtn">Themes</button>
+      <button @click="dropdownClick()" class="dropbtn"></button>
         <div id="myDropdown" class="dropdown-content">
-        <button @click="toTheme('warm')">Warm</button>
-        <button @click="toTheme('cool')">Cool</button>
-        <button @click="toTheme('earth')">Earth</button>
-        <button @click="toTheme('grey')">Greyscale</button>
-        <button @click="toTheme('white')">White</button>
+        <button class="red" @click="toTheme('Red')">Red</button>
+        <button class="orange" @click="toTheme('Orange')">Orange</button>
+        <button class="yellow" @click="toTheme('Yellow')">Yellow</button>
+        <button class="green" @click="toTheme('Green')">Green</button>
+        <button class="blue" @click="toTheme('Blue')">Blue</button>
+        <button class="indigo" @click="toTheme('Indigo')">Indigo</button>
+        <button class="violet" @click="toTheme('Violet')">Violet</button>
+        <button class="white" @click="toTheme('White')">White</button>
+        <button class="black" @click="toTheme('Black')">Black</button>
   </div>
 </div>
     <router-view />

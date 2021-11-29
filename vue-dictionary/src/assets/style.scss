@@ -8,68 +8,126 @@ body {
   box-sizing: border-box;
   align-items: center;
 }
-:root[theme="cool"] {
-  --color: #a0cfeb;
+:root[theme="Red"] {
+  --color: #ff0000;
 }
-:root[theme="warm"] {
-  --color: #f2b55e;
+:root[theme="Orange"] {
+  --color: #ff8400;
 }
-:root[theme="earth"] {
-  --color: #99db93;
+:root[theme="Yellow"] {
+  --color: #f7e700;
 }
-:root[theme="grey"] {
-  --color: #b3b8b2;
+:root[theme="Green"] {
+  --color: #038f03;
+}
+:root[theme="Blue"] {
+  --color: #0451c4;
+}
+:root[theme="Indigo"] {
+  --color: #581dbf;
+}
+:root[theme="Violet"] {
+  --color: #a902f0;
+}
+:root[theme="Black"] {
+  --color: black;
 }
 :root[theme="white"] {
   --color: white;
 }
-
-/* Dropdown Button */
 .dropbtn {
-  background-color: #3498db;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+  display: none;
 }
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover,
-.dropbtn:focus {
-  background-color: #2980b9;
-}
-
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
+  margin-top: 1.5rem;
   position: relative;
   display: inline-block;
 }
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+button {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 4px;
+}
+.red {
+  background-color: #ff0000;
+}
+.orange {
+  background-color: #ff8400;
+}
+.yellow {
+  background-color: #f7e700;
+}
+.green {
+  background-color: #038f03;
+}
+.blue {
+  background-color: #0451c4;
+}
+.indigo {
+  background-color: #581dbf;
+}
+.violet {
+  background-color: #a902f0;
+}
+.white {
+  background-color: white;
+}
+.black {
+  background-color: black;
+  color: white;
 }
 
-/* Links inside the dropdown */
-.dropdown-content a {
+h1 {
+  font-size: 2.3rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+}
+h2 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: black;
+  margin-right: 46%;
+  margin-left: 46%;
+}
+
+.container {
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
+  padding: 10px;
+  margin: 1.5rem;
+  background-color: white;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.part-of-speech {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
   color: black;
-  padding: 12px 16px;
+}
+
+.definition {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.example {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.synonym {
+  font-size: 1.5rem;
+  color: black;
+  text-transform: capitalize;
+}
+.link {
   text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {
-  display: block;
+  color: blue;
 }

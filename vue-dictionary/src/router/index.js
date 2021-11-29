@@ -12,7 +12,7 @@ const routes = [
     component: Dictionary,
   },
   {
-    path: "/synonym",
+    path: "/synonym/:id",
     name: "Synonym",
     component: Synonym,
   },

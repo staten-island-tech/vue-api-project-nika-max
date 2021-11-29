@@ -1,6 +1,6 @@
 <template>
   <div>
-      <h1>Nika's Dictionary</h1>
+      <h1>NIKA'S RAINBOW DICTIONARY</h1>
       <div class="word-search">
         <form @submit.prevent="fetchData">
             <input type="text" placeholder="Search a word..." v-model="searchedWord">
@@ -8,25 +8,24 @@
         </form>
       </div>
       <h2>{{ word }}</h2>
-      <p v-for="meaning in meanings" :key="meaning.id">
-        <span> {{ meaning.partOfSpeech }}: </span>
-        <span> {{ meaning.definitions[0].definition }} </span>
-        <br> 
-        <span> Example: {{ meaning.definitions[0].example }} </span>
-        <br>
-        <span> Synonyms: 
-          <span @click="Hyperlink()" v-for="synonym in meaning.definitions[0].synonyms" :key="synonym.id">
-            {{ synonym }},
+        <p class="container" v-for="meaning in meanings" :key="meaning.id">
+        <span class="part-of-speech"> {{ meaning.partOfSpeech }}: </span>
+        <span class="definition"> {{ meaning.definitions[0].definition }} </span>
+        <span> <h5></h5> </span>
+        <span class="example"> <b>EXAMPLE:</b> {{ meaning.definitions[0].example }}. </span>
+        <span> <h5></h5> </span>
+        <span class="synonym"> <b>SYNONYMS:</b> 
+          <span v-for="synonym in meaning.definitions[0].synonyms" :key="synonym.id">
+          <router-link :to="synonymPath" class="link"> {{ synonym }},   </router-link>
           </span>
         </span>
       </p>
-
   </div>
 </template>
 
 <script>
 export default {
-    name: "WordList",
+    name: "WordSearch",
     data(){
       return{
         searchedWord:'',
@@ -50,13 +49,21 @@ export default {
           this.meanings = data[0].meanings;
 
         } catch (error){
-          alert(error);
+          alert("NOT A WORD. TRY AGAIN");
         }
       },
-      Hyperlink(){
+    
+   /*  Hyperlink(){
         this.$router.push('/synonym'); 
-      }
-  }
+      } */
+    },
+
+    computed: {
+      synonymPath: function() {
+        return `/synonym/${this.word}`;
+      },
+    },
+  
 };
 </script>
 

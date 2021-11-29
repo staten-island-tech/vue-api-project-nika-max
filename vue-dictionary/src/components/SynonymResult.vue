@@ -1,15 +1,15 @@
 <template>
   <div>
       <h2>{{ word }}</h2>
-      <p v-for="meaning in meanings" :key="meaning.id">
-        <span> {{ meaning.partOfSpeech }}: </span>
-        <span> {{ meaning.definitions[0].definition }} </span>
-        <br> 
-        <span> Example: {{ meaning.definitions[0].example }} </span>
-        <br>
-        <span> Synonyms: 
+      <p class="container" v-for="meaning in meanings" :key="meaning.id">
+        <span class="part-of-speech"> {{ meaning.partOfSpeech }}: </span>
+        <span class="definition"> {{ meaning.definitions[0].definition }} </span>
+        <span> <h5></h5> </span>
+        <span class="example"> <b>EXAMPLE:</b> {{ meaning.definitions[0].example }} </span>
+        <span> <h5></h5> </span>
+        <span class="synonym"> <b>SYNONYMS:</b> 
           <span v-for="synonym in meaning.definitions[0].synonyms" :key="synonym.id">
-            {{ synonym }},
+            {{ synonym }},  
           </span>
         </span>
       </p>
@@ -23,12 +23,11 @@ export default {
     name: "SynonymResult",
     data(){
       return{
-        words:[],
+        word:[],
         meanings: [],
         synonym: []
       };
     },
-    props: ["word"],
 
     created () {
       this.fetchData()
@@ -38,11 +37,10 @@ export default {
       fetchData: async function(){
         try{
           const result = await fetch(
-            `https://api.dictionaryapi.dev/api/v2/entries/en/${this.word}`
+            `https://api.dictionaryapi.dev/api/v2/entries/en/${this.$route.params.id}`
           );
           const data = await result.json();
-          console.log(data)
-          console.log(data[0].meanings);
+          console.log(data);
           this.word = data[0].word;
           this.meanings = data[0].meanings;
 
@@ -73,4 +71,4 @@ export default {
 
 <style>
 
-</style>
+</style> 

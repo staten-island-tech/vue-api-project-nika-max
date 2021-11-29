@@ -1,5 +1,5 @@
 <template>
-  <div class="synonym"> 
+  <div class="synonym-result"> 
     <SynonymResult/>
   </div>
 </template>
@@ -12,5 +12,6 @@ export default {
   components: {
     SynonymResult,
   },
+
 };
 </script>
