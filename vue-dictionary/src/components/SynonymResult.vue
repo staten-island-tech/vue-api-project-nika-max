@@ -1,5 +1,6 @@
 <template>
   <div>
+      <h1>NIKA'S RAINBOW DICTIONARY</h1>
       <h2>{{ word }}</h2>
       <p class="container" v-for="meaning in meanings" :key="meaning.id">
         <span class="part-of-speech"> {{ meaning.partOfSpeech }}: </span>
