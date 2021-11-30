@@ -15,8 +15,8 @@
         <span class="example"> <b>EXAMPLE:</b> {{ meaning.definitions[0].example }}. </span>
         <span> <h5></h5> </span>
         <span class="synonym"> <b>SYNONYMS:</b>
-          <span v-for="synonym in meaning.definitions[0].synonyms" :key="synonym.id">
-          <router-link :to="synonymPath" v-model="synonyms" v-on:change= "synonymPath" class="link"> {{ synonym }},  
+          <span v-for="synonym in meaning.definitions[0].synonyms" :key="synonym">
+          <router-link :to="synonymPath"  v-on:change= "synonymPath" class="link"> {{ synonym }},  
           </router-link>
           </span>
         </span>
@@ -32,10 +32,11 @@ export default {
         searchedWord:'',
         words:[],
         meanings: [],
-        synonym: [],
+        
+        word:""
       };
     },
-    props: ["word"],
+ 
 
     methods: {
       fetchData: async function(){
@@ -61,7 +62,8 @@ export default {
 
     computed: {
       synonymPath: function() {
-        return `/synonym/${this.synonym.id}`;
+       
+        return `/synonym/${this.synonym}`;
       },
     },
   
